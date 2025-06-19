@@ -8,7 +8,6 @@ class ListNode:
 class LinkedList:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         dummy_head = ListNode(0)
-        print(dummy_head.val)  # Debug statement to check initial value
         current = dummy_head
         carry = 0
 
