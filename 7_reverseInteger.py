@@ -24,6 +24,8 @@ def reverse(x: int) -> int:
     
     return ans
 
+
+#  a solution from Leetcode, it's more concise and advanced than mine
     # a = str(x)
     # if x < 0:
     #     a = a[1::]
