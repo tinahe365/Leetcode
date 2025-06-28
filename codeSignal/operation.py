@@ -1,6 +1,4 @@
 def solution(queries):
-    
-    
     container = []
     output = []
     
@@ -14,10 +12,11 @@ def solution(queries):
             if item[0] == "REMOVE" and exist == "true":
                 container.remove(item[1])
         elif item[0] == "GET_NEXT":
-            digit_container = set(container)
-            digit_container.discard("")
-            digit_container.discard("true")
-            digit_container.discard("false")
+            # digit_container = set(container)
+            # digit_container.discard("")
+            # digit_container.discard("true")
+            # digit_container.discard("false")
+            digit_container = set(container) - {"", "true", "false"}
             
             transposed_digit = map(lambda x: int(x),list(digit_container)) 
             sorted_digits = sorted(transposed_digit)
@@ -33,7 +32,6 @@ def solution(queries):
     
     return output
             
-
             
 queries = [
     ["ADD","1"], 
