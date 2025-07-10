@@ -15,25 +15,21 @@ def threeSumClosest(nums: List[int], target: int) -> int:
     for i in range(len(nums)-2):
         left = i + 1
         right = n - 1
-        print(f"i: {i}, nums[i]: {nums[i]}, left: {left}, right: {right}, d_min: {d_min}")    
         while left < right:
             
             threeSum =  nums[i] + nums[left] + nums[right]
-            # if nums[i] == 9:
-            #     print(f"9: i: {i}, left: {nums[left]}, right: {nums[right]}, threeSum: {threeSum}, target: {target}")
+        
             if threeSum == target:
                 return threeSum
             if abs(threeSum - target) < d_min:
            
                 d_min =  abs(threeSum - target)
                 distance_points[d_min] = threeSum
-                #print(distance_points, nums[i], nums[left] , nums[right])
-
+                
             if threeSum > target:
                 right -= 1
             elif threeSum < target:
                 left += 1
-           
    
     if distance_points:
         threeSum = distance_points[min(distance_points.keys())]
@@ -65,3 +61,9 @@ def threeSumClosest(nums: List[int], target: int) -> int:
 # print(threeSumClosest(nums, 16))  
 
 print(threeSumClosest([-84,92,26,19,-7,9,42,-51,8,30,-100,-13,-38], 78))
+
+
+# Refactoring the code
+# use a variable to store the closest sum rather than a dictionay
+# if abs(current_sum - target) < abs(closest_sum - target):
+#     closest_sum = current_sum
