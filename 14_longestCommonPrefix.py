@@ -11,3 +11,8 @@ def longestCommonPrefix(strs):
             prefix = prefix[:-1]
     
     return prefix
+
+strs = ["flower","flow","flight"]
+print(longestCommonPrefix(strs))  # Output: "fl"
+
+print(strs[0][:10])
