@@ -1,31 +1,31 @@
 from typing import List
 # my solution, not the best, time complexity is O(n^2)
-# class Solution:
+class Solution:
 
-#     def findSubstring(self, s: str, words: List[str]) -> List[int]:
-#         n1 = len(s)
-#         n2 = len(words[0])
+    def findSubstring(self, s: str, words: List[str]) -> List[int]:
+        n1 = len(s)
+        n2 = len(words[0])
        
-#         temp = words.copy()
-#         output = []
-#         for i in range(n1):
+        temp = words.copy()
+        output = []
+        for i in range(n1):
             
-#             for j in range(len(words)):
-#                 start = i + j*n2
-#                 end = start + n2
-#                 cur_item = s[start:end]
+            for j in range(len(words)):
+                start = i + j*n2
+                end = start + n2
+                cur_item = s[start:end]
                 
-#                 if cur_item not in temp:
-#                     temp = words.copy()
-#                     break
-#                 else:
-#                     temp.remove(cur_item)
+                if cur_item not in temp:
+                    temp = words.copy()
+                    break
+                else:
+                    temp.remove(cur_item)
 
-#                 if not temp:
-#                     output.append(i)
-#                     temp = words.copy()       
+                if not temp:
+                    output.append(i)
+                    temp = words.copy()       
             
-#         return output
+        return output
 
 
 class Solution:
