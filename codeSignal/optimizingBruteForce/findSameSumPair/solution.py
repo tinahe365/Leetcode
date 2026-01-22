@@ -45,22 +45,27 @@
 
 
 # optimized brute force solution
-def solution(arrA, arrB):
+def solution(arrA, arrB): # this function is used to find two indices i and j such that arrA[i] + arrA[j] == arrB[i] + arrB[j]
     seen = {}
     best_i = best_j = None
     for j, (a,b) in enumerate(zip(arrA, arrB)):
-        d = a - b
-        c = -d
-        if c in seen:
-            i = seen[c]
-            if best_i is None or i < best_i or (i == best_i and j < best_j):
-                best_i, best_j = i, j
-                if best_i == 0:
-                    return [best_i, best_j]
+        print(j,a,b)
+    #     d = a - b
+    #     c = -d
+    #     if c in seen:
+    #         i = seen[c]
+    #         if best_i is None or i < best_i or (i == best_i and j < best_j):
+    #             best_i, best_j = i, j
+    #             if best_i == 0:
+    #                 return [best_i, best_j]
         
-        if d not in seen:
-            seen[d] = j
+    #     if d not in seen:
+    #         seen[d] = j
         
    
 
-    return [best_i, best_j]
+    # return [best_i, best_j]
+
+arrA = [2, 5, 1, 4]  
+arrB = [3, 6, 3, 2]
+print(solution(arrA, arrB))
